@@ -26,16 +26,20 @@ public:
 public slots:
     void findClicked();
     // void powerOnClicked();
-    // void powerOffClicked();
+    void powerOffClicked();
+    void clearBtnClicked();
 
     void discoveredDevice(const QBluetoothDeviceInfo &device);
     // void startDiscovery();
     // void blueListClicked(QListWidgetItem *item);
+    void bluetoothListClicked(QListWidget *item);
 
 private:
     Ui::MainWindow *ui;
     QBluetoothDeviceDiscoveryAgent *bluetoothAgent;
+    QBluetoothDeviceDiscoveryAgent *discoveryAgent;
     QBluetoothSocket *socket;
+    QList<QBluetoothDeviceInfo> discoveryAgentList;
     QString contentString;
 };
 #endif // MAINWINDOW_H
